@@ -1,3 +1,6 @@
+#! /usr/bin/env node
+//SHABANG
+
 import inquirer from "inquirer";
 
 let myBalance = 10000; // Dollar

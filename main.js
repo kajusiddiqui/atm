@@ -1,14 +1,13 @@
+#! /usr/bin/env node
+//SHABANG
 import inquirer from "inquirer";
 let myBalance = 10000; // Dollar
 let myPin = 1234; //ATM Password
 // asking user for Password
 let pinAnswer = await inquirer.prompt([
-    { name: "pin",
-        message: "Enter your pin",
-        type: "number"
-    }
+    { name: "pin", message: "Enter your pin", type: "number" },
 ]);
-// If user confirms password 
+// If user confirms password
 if (pinAnswer.pin === myPin) {
     console.log("Welcome to  your Account");
     //user get options
@@ -26,8 +25,8 @@ if (pinAnswer.pin === myPin) {
             {
                 name: "amount",
                 message: "Enter your amount",
-                type: "number"
-            }
+                type: "number",
+            },
         ]);
         if (amountAns.amount > myBalance) {
             console.log("Insufficient Balance");
@@ -46,7 +45,7 @@ if (pinAnswer.pin === myPin) {
                 type: "list",
                 choices: ["500", "1000", "2000", "5000", "10000", "20000"],
                 message: "Enter your amount",
-            }
+            },
         ]);
         if (amountAns.amount <= myBalance) {
             myBalance -= amountAns.amount;
